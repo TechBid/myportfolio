@@ -1,0 +1,154 @@
+1. Finance
+
+Title 1: AI-Driven Multimodal Risk Modeling for Decentralized Finance (DeFi) Systems
+
+Gap: Most risk models in finance are designed for traditional systems, while DeFi remains underexplored, especially in combining transaction graph analysis with real-time sentiment data.
+
+Contribution: Introduces multimodal ML models that fuse blockchain transaction graphs, social sentiment, and liquidity flow for risk prediction.
+
+Title 2: Federated Learning for Privacy-Preserving Credit Scoring Across Financial Institutions
+
+Gap: Cross-institution credit scoring is rare due to data-sharing restrictions. Existing federated approaches in finance are still primitive.
+
+Contribution: Builds a federated learning system enabling banks to collaboratively train robust credit models without sharing raw data, enhancing fairness and generalizability.
+
+2. Healthcare and Medicine
+
+Title 3: Causal Representation Learning for Predicting Long-Term Treatment Outcomes in Multi-Disease Patients
+
+Gap: Most AI healthcare systems focus on single-disease predictions. Multi-disease, longitudinal treatment effects are underexplored.
+
+Contribution: Uses causal ML to model treatment interactions across chronic diseases for personalized long-term outcome prediction.
+
+Title 4: Low-Resource Medical Imaging Diagnosis Using Generative Self-Supervised Learning
+
+Gap: AI models in medical imaging rely on large labeled datasets, which are scarce in developing countries.
+
+Contribution: Develops generative SSL techniques for accurate diagnosis in low-resource settings, democratizing AI healthcare access.
+
+3. Agriculture and Food Systems
+
+Title 5: Reinforcement Learning for Adaptive Irrigation Scheduling under Climate Uncertainty
+
+Gap: Current AI-based irrigation is mostly static or rule-based, not adaptive to changing weather and soil conditions.
+
+Contribution: Uses RL to dynamically adjust irrigation based on real-time sensor and weather data, optimizing yield and water use.
+
+Title 6: AI-Powered Supply Chain Traceability for Food Fraud Detection Using Multimodal Data Fusion
+
+Gap: Food fraud detection often relies on isolated methods like barcodes or chemical tests. Multimodal AI approaches are lacking.
+
+Contribution: Fuses supply chain, sensor, and spectroscopic data to detect anomalies in food authenticity at scale.
+
+4. Computing
+
+Title 7: Energy-Aware Neural Architecture Search for Edge AI Deployment
+
+Gap: NAS (Neural Architecture Search) focuses on accuracy, rarely optimizing for energy on edge devices.
+
+Contribution: Introduces energy-optimized NAS frameworks to design lightweight yet powerful AI models for IoT/edge computing.
+
+Title 8: Quantum-Inspired Machine Learning for Scalable Graph Neural Networks
+
+Gap: GNNs struggle with scalability in massive graphs (e.g., social, financial networks). Quantum-inspired methods are underexplored.
+
+Contribution: Applies quantum-inspired algorithms to improve efficiency and scalability of GNNs.
+
+11. Defense and Security
+
+Title 21: Adversarial Machine Learning for Cybersecurity in Military IoT Systems
+
+Gap: Military IoT systems are vulnerable, and adversarial ML is underexplored in this domain.
+
+Contribution: Develops adversarial-resilient ML defenses tailored to defense IoT networks.
+
+Title 22: AI-Powered Predictive Policing with Fairness Guarantees
+
+Gap: Predictive policing AI often amplifies bias. Few studies propose fairness-constrained ML approaches.
+
+Contribution: Designs fairness-aware ML algorithms for predictive policing to reduce systemic bias.
+
+6. Supply Chains
+
+Title 11: AI-Based Resilience Modeling for Supply Chains under Geopolitical Uncertainty
+
+Gap: Supply chain resilience research lacks AI models integrating geopolitical risk indicators.
+
+Contribution: Builds ML models that combine trade, political, and logistics data to predict disruptions and optimize routing.
+
+Title 12: Digital Twin-Enhanced Machine Learning for Real-Time Supply Chain Optimization
+
+Gap: Digital twins exist, but integration with adaptive ML optimization is limited.
+
+Contribution: Develops AI-driven digital twins to continuously optimize supply chain operations.
+
+7. Manufacturing and Industry 4.0
+
+Title 13: Graph-Based Machine Learning for Predictive Maintenance in Interconnected Factory Systems
+
+Gap: Predictive maintenance often treats machines in isolation, ignoring interdependencies.
+
+Contribution: Applies graph ML to model interactions between machines for more accurate system-level fault prediction.
+
+Title 14: Reinforcement Learning for Zero-Waste Manufacturing in Circular Economy Systems
+
+Gap: AI for waste reduction in manufacturing is underexplored, especially under circular economy frameworks.
+
+Contribution: Uses RL to minimize waste and optimize reuse/recycling in industrial processes.
+
+8. Transportation and Mobility
+
+Title 15: AI for Ethical Routing in Autonomous Vehicles Considering Pedestrian Fairness
+
+Gap: Most AV routing optimizes safety or efficiency, but fairness toward pedestrians (e.g., wait times, accessibility) is ignored.
+
+Contribution: Creates fairness-aware routing algorithms balancing safety, efficiency, and pedestrian equity.
+
+Title 16: Graph Neural Networks for Predicting Emerging Traffic Patterns in Smart Cities
+
+Gap: Current traffic AI models focus on real-time congestion, not emerging long-term traffic trends.
+
+Contribution: Uses GNNs with spatiotemporal forecasting to predict evolving traffic structures.
+
+9. Energy and Sustainability
+
+Title 17: AI-Driven Dynamic Carbon Capture Optimization Using Real-Time Energy and Weather Data
+
+Gap: Carbon capture facilities run on fixed schedules, not optimized for conditions.
+
+Contribution: Builds AI systems to optimize carbon capture timing for efficiency and cost savings.
+
+Title 18: Reinforcement Learning for Smart Grid Stability under Renewable Energy Variability
+
+Gap: Existing grid AI focuses on load prediction but not adaptive balancing under renewable uncertainty.
+
+Contribution: Uses RL to stabilize grids in renewable-heavy environments.
+
+10. Education
+
+Title 19: Adaptive Learning Path Generation Using Causal Machine Learning in Digital Classrooms
+
+Gap: Most adaptive systems rely on correlations, not causality, leading to ineffective personalization.
+
+Contribution: Applies causal ML to design adaptive learning paths based on real knowledge gains.
+
+Title 20: AI for Early Detection of Learning Disabilities Using Multimodal Student Interaction Data
+
+Gap: Current detection relies on standardized tests, not real-time multimodal learning interactions.
+
+Contribution: Fuses speech, writing, and behavioral data to identify early signs of learning challenges.
+
+11. Defense and Security
+
+Title 21: Adversarial Machine Learning for Cybersecurity in Military IoT Systems
+
+Gap: Military IoT systems are vulnerable, and adversarial ML is underexplored in this domain.
+
+Contribution: Develops adversarial-resilient ML defenses tailored to defense IoT networks.
+
+12. Law and Governance
+Title 24: Machine Learning for Predicting Policy Impact on Socioeconomic Inequality
+
+Gap: Policy outcome modeling using ML is underdeveloped, especially for inequality.
+
+Contribution: Builds interpretable ML models predicting socioeconomic impacts of proposed policies.

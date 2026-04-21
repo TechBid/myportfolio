@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiny Applications Suite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2.8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='signature.css') }}?v=1.0">
+</head>
+
+<body class="signature-layout">
+    <header>
+        <div class="header-container">
+            <div class="profile-container">
+                <img src="https://avatars.githubusercontent.com/u/169674746?v=4" alt="Profile Picture"
+                    class="profile-picture">
+                <div class="header-text">
+                    <a href="{{ url_for('index') }}" style="text-decoration: none; color: inherit;">
+                        <h1>Shivogo John</h1>
+                    </a>
+                    <p class="job-title">Machine Learning Engineer</p>
+                    <p class="welcome-message"><span id="typed-text"></span></p>
+                </div>
+            </div>
+            <div class="social-links-bottom">
+                <a href="https://github.com/SHIVOGOJOHN" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-github"></i></a>
+                <a href="mailto:shivogojohn@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="tel:+254704234829" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-phone"></i></a>
+
+                <a href="https://medium.com/@shivogojohn" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-graduation-cap"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="project-details">
+
+        <h1>Shiny Applications Suite</h1>
+        <p><strong>A comprehensive collection of 8 interactive R Shiny applications for data analysis, visualization,
+                and decision-making.</strong></p>
+
+        <p>This suite demonstrates the power of R Shiny for building full-stack data science applications. It includes
+            tools for business analytics, statistical simulation, financial forecasting, geospatial analysis, and
+            quality control. All apps feature a consistent, modern UI using bslib and are deployed for real-time
+            interaction.</p>
+
+        <h3>All 8 Applications</h3>
+        <ul>
+            <li><strong>1. Business Analytics Dashboard:</strong> Track sales, KPIs, and customer churn with interactive
+                visualizations.</li>
+            <li><strong>2. Data Explorer:</strong> Upload and explore datasets with dynamic visualizations and filtering
+                capabilities.</li>
+            <li><strong>3. Statistical Lab:</strong> Interactive tools for A/B testing, confidence intervals, regression
+                analysis, and distribution visualization.</li>
+            <li><strong>4. Model Deployment Hub:</strong> Deploy and test machine learning models (Random Forest, Linear
+                Regression) with interactive predictions.</li>
+            <li><strong>5. Financial Analysis Suite:</strong> Portfolio optimization, ARIMA/ETS forecasting, and Value
+                at Risk (VaR) analysis.</li>
+            <li><strong>6. Geospatial Explorer:</strong> Interactive maps of Kenya with clustering, heatmaps, and
+                choropleth visualizations.</li>
+            <li><strong>7. Quality Control Monitor:</strong> Real-time SPC charts, process capability analysis (Cp,
+                Cpk), and manufacturing quality monitoring.</li>
+            <li><strong>8. Survey Analyzer:</strong> Analyze survey data with Net Promoter Score (NPS), satisfaction
+                metrics, and downloadable reports.</li>
+        </ul>
+
+        <div style="margin-top: 20px;">
+            <a href="https://github.com/SHIVOGOJOHN/dataml" class="btn" target="_blank"
+                style="display: inline-block; margin: 5px;"><i class="fab fa-github"></i>
+                View on GitHub</a>
+            <a href="https://datamlproject.shinyapps.io/shiny-apps-launcher/" class="btn" target="_blank"
+                style="display: inline-block; margin: 5px;"><i class="fas fa-rocket"></i>
+                Launch Apps</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="tel:+254704234829" target="_blank" rel="noopener noreferrer"><i class="fas fa-phone"></i></a>
+            <a href="mailto:shivogojohn@gmail.com" target="_blank" rel="noopener noreferrer"><i
+                    class="fas fa-envelope"></i></a>
+        </div>
+        <p class="titles">Machine Learning Engineer | Data Engineer | Statistician</p>
+        <p class="copyright">&copy; 2025 Shivogo John. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const textElement = document.getElementById('typed-text');
+        const fullText = "Glad you dropped by. I'm passionate about making sense of data and building impactful solutions with it. Feel free to have a look around.";
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < fullText.length) {
+                textElement.textContent += fullText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 15); // Adjust typing speed here (milliseconds)
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', typeText);
+
+        // Profile picture enlargement
+        document.addEventListener('DOMContentLoaded', function () {
+            const profilePicture = document.querySelector('.profile-picture');
+            const body = document.body;
+            let overlay = document.querySelector('.overlay');
+
+            // Create overlay if it doesn't exist
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.classList.add('overlay');
+                body.appendChild(overlay);
+            }
+
+            profilePicture.addEventListener('click', function () {
+                profilePicture.classList.toggle('enlarged');
+                overlay.classList.toggle('active');
+                // Prevent scrolling when enlarged
+                body.style.overflow = profilePicture.classList.contains('enlarged') ? 'hidden' : '';
+            });
+
+            overlay.addEventListener('click', function () {
+                profilePicture.classList.remove('enlarged');
+                overlay.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+
+</html>

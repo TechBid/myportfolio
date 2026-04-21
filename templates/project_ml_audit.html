@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Audit Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2.8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='signature.css') }}?v=1.0">
+</head>
+
+<body class="signature-layout">
+    <header>
+        <div class="header-container">
+            <div class="profile-container">
+                <img src="https://avatars.githubusercontent.com/u/169674746?v=4" alt="Profile Picture"
+                    class="profile-picture">
+                <div class="header-text">
+                    <a href="{{ url_for('index') }}" style="text-decoration: none; color: inherit;">
+                        <h1>Shivogo John</h1>
+                    </a>
+                    <p class="job-title">Machine Learning Engineer</p>
+                    <p class="welcome-message"><span id="typed-text"></span></p>
+                </div>
+            </div>
+            <div class="social-links-bottom">
+                <a href="https://github.com/SHIVOGOJOHN" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-github"></i></a>
+                <a href="mailto:shivogojohn@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="tel:+254704234829" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-phone"></i></a>
+
+                <a href="https://medium.com/@shivogojohn" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-graduation-cap"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="project-details">
+
+        <h1>ML Audit Library</h1>
+        <p><strong>Solves Data Lineage Blindness by tracking granular preprocessing steps.</strong></p>
+
+        <p>ml-audit is a lightweight Python library designed to bring transparency and reproducibility to data
+            preprocessing. Unlike standard experiment trackers that treat preprocessing as a black box, this library
+            records every granular transformation applied to your pandas DataFrame.</p>
+
+        <h3>Key Features</h3>
+        <ul>
+            <li><strong>Full Audit Trail:</strong> Automatically logs every step (Imputation, Scaling, Encoding, etc.)
+                into a JSON audit file.</li>
+            <li><strong>Reproducibility:</strong> Verify if your data pipeline produces the exact same result every time
+                using hash validation.</li>
+            <li><strong>Visualization:</strong> Auto-generates an interactive HTML timeline of your preprocessing steps.
+            </li>
+        </ul>
+
+        <div style="margin-top: 20px;">
+            <a href="https://github.com/SHIVOGOJOHN/ml_audit" class="btn" target="_blank"
+                style="display: inline-block; margin: 5px;"><i class="fab fa-github"></i>
+                View on GitHub</a>
+            <a href="https://pypi.org/project/ml-audit/" class="btn" target="_blank"
+                style="display: inline-block; margin: 5px;"><i class="fas fa-box-open"></i>
+                View on PyPI</a>
+            <a href="https://www.mlaudit.info" class="btn" target="_blank"
+                style="display: inline-block; margin: 5px;"><i class="fas fa-book"></i> View
+                Documentation</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="tel:+254704234829" target="_blank" rel="noopener noreferrer"><i class="fas fa-phone"></i></a>
+            <a href="mailto:shivogojohn@gmail.com" target="_blank" rel="noopener noreferrer"><i
+                    class="fas fa-envelope"></i></a>
+        </div>
+        <p class="titles">Machine Learning Engineer | Data Engineer | Statistician</p>
+        <p class="copyright">&copy; 2025 Shivogo John. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const textElement = document.getElementById('typed-text');
+        const fullText = "Glad you dropped by. I'm passionate about making sense of data and building impactful solutions with it. Feel free to have a look around.";
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < fullText.length) {
+                textElement.textContent += fullText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 15); // Adjust typing speed here (milliseconds)
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', typeText);
+
+        // Profile picture enlargement
+        document.addEventListener('DOMContentLoaded', function () {
+            const profilePicture = document.querySelector('.profile-picture');
+            const body = document.body;
+            let overlay = document.querySelector('.overlay');
+
+            // Create overlay if it doesn't exist
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.classList.add('overlay');
+                body.appendChild(overlay);
+            }
+
+            profilePicture.addEventListener('click', function () {
+                profilePicture.classList.toggle('enlarged');
+                overlay.classList.toggle('active');
+                // Prevent scrolling when enlarged
+                body.style.overflow = profilePicture.classList.contains('enlarged') ? 'hidden' : '';
+            });
+
+            overlay.addEventListener('click', function () {
+                profilePicture.classList.remove('enlarged');
+                overlay.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+
+</html>

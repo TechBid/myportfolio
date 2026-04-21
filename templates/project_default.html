@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2.8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='signature.css') }}?v=1.0">
+</head>
+
+<body class="signature-layout">
+    <header>
+        <div class="header-container">
+            <div class="profile-container">
+                <img src="https://avatars.githubusercontent.com/u/169674746?v=4" alt="Profile Picture"
+                    class="profile-picture">
+                <div class="header-text">
+                    <a href="{{ url_for('index') }}" style="text-decoration: none; color: inherit;">
+                        <h1>Shivogo John</h1>
+                    </a>
+                    <p class="job-title">Machine Learning Engineer</p>
+                    <p class="welcome-message"><span id="typed-text"></span></p>
+                </div>
+            </div>
+            <div class="social-links-bottom">
+                <a href="https://github.com/SHIVOGOJOHN" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-github"></i></a>
+                <a href="mailto:shivogojohn@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="tel:+254704234829" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-phone"></i></a>
+
+                <a href="https://medium.com/@shivogojohn" class="btn" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-graduation-cap"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="project-details" class="fade-in-section">
+        {% if project %}
+        <h1 style="text-align: center;">{{ project.title }}</h1>
+
+        <div class="project-meta" style="text-align: center; margin-bottom: 2rem;">
+            {% if project.tech_stack %}
+            <div class="tech-stack-badges">
+                {% for tech in project.tech_stack %}
+                <span class="badge"
+                    style="background: rgba(0, 82, 204, 0.2); color: #00D9FF; padding: 5px 10px; border-radius: 15px; margin: 0 5px; font-size: 0.9em;">{{
+                    tech }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="project-content" style="max-width: 800px; margin: 0 auto;">
+            {% if project.image %}
+            <div class="project-image-container" style="text-align: center; margin-bottom: 2rem;">
+                <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}"
+                    style="max-width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+            </div>
+            {% endif %}
+
+            <div class="description">
+                <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                    {{ project.description }}
+                </p>
+                {% if project.details %}
+                <p style="line-height: 1.6; margin-bottom: 2rem;">
+                    {{ project.details }}
+                </p>
+                {% endif %}
+            </div>
+
+            <div class="project-links"
+                style="text-align: center; margin-top: 3rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                {% if project.github_link %}
+                <a href="{{ project.github_link }}" class="btn" target="_blank"><i class="fab fa-github"></i> View
+                    Code</a>
+                {% endif %}
+
+                {% if project.live_link %}
+                <a href="{{ project.live_link }}" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i>
+                    Live Demo</a>
+                {% endif %}
+
+                {% if project.docs_link %}
+                <a href="{{ project.docs_link }}" class="btn" target="_blank"><i class="fas fa-book"></i>
+                    Documentation</a>
+                {% endif %}
+            </div>
+        </div>
+        {% else %}
+        <h1 style="text-align: center;">Project Not Found</h1>
+        <p style="text-align: center;">The requested project could not be loaded.</p>
+        {% endif %}
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="tel:+254704234829" target="_blank" rel="noopener noreferrer"><i class="fas fa-phone"></i></a>
+            <a href="mailto:shivogojohn@gmail.com" target="_blank" rel="noopener noreferrer"><i
+                    class="fas fa-envelope"></i></a>
+        </div>
+        <p class="titles">Machine Learning Engineer | Data Engineer | Statistician</p>
+        <p class="copyright">&copy; 2025 Shivogo John. All rights reserved.</p>
+    </footer>
+
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const flashMessages = document.querySelector('.flashes');
+            if (flashMessages) {
+                setTimeout(function () {
+                    flashMessages.style.display = 'none';
+                }, 3000); // 3000 milliseconds = 3 seconds
+            }
+        });
+    </script>
+    {% endif %}
+    {% endwith %}
+    <script>
+        const textElement = document.getElementById('typed-text');
+        const fullText = "Glad you dropped by. I'm passionate about making sense of data and building impactful solutions with it. Feel free to have a look around.";
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < fullText.length) {
+                textElement.textContent += fullText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 15); // Adjust typing speed here (milliseconds)
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', typeText);
+
+        // Profile picture enlargement
+        document.addEventListener('DOMContentLoaded', function () {
+            const profilePicture = document.querySelector('.profile-picture');
+            const body = document.body;
+            let overlay = document.querySelector('.overlay');
+
+            // Create overlay if it doesn't exist
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.classList.add('overlay');
+                body.appendChild(overlay);
+            }
+
+            profilePicture.addEventListener('click', function () {
+                profilePicture.classList.toggle('enlarged');
+                overlay.classList.toggle('active');
+                // Prevent scrolling when enlarged
+                body.style.overflow = profilePicture.classList.contains('enlarged') ? 'hidden' : '';
+            });
+
+            overlay.addEventListener('click', function () {
+                profilePicture.classList.remove('enlarged');
+                overlay.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+
+</html>

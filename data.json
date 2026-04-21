@@ -17,19 +17,24 @@
   {
     "id": "blockchain_ai",
     "title": "Federated Learning with Blockchain & IPFS",
-    "description": "A decentralized, auditable, and transparent AI training ecosystem.",
+    "description": "A decentralized, auditable, and transparent AI training ecosystem with agentic AI monitoring.",
     "tech_stack": [
       "TensorFlow",
       "Scikit-learn",
       "Flower",
+      "LangChain",
+      "Anthropic API",
       "FastAPI",
       "Flask",
       "Docker",
+      "Kubernetes",
       "Ethereum",
       "IPFS",
-      "Streamlit"
+      "Streamlit",
+      "Prompt Engineering",
+      "MLflow"
     ],
-    "details": "This project integrates Federated Learning (FL) with Blockchain and IPFS to create a decentralized, auditable, and transparent AI training ecosystem. The system ensures that local data from different clients (e.g., stores, hospitals, IoT devices) remains private, while model updates are aggregated securely on a central node. Each aggregation round is recorded on the Ethereum blockchain for transparency, and the aggregated global model is stored on IPFS for decentralized access."
+    "details": "This project integrates Federated Learning (FL) with Blockchain and IPFS to create a decentralized, auditable, and transparent AI training ecosystem. The system ensures that local data from different clients (e.g., stores, hospitals, IoT devices) remains private, while model updates are aggregated securely on a central node. Each aggregation round is recorded on the Ethereum blockchain for transparency, and the aggregated global model is stored on IPFS for decentralized access. Enhanced with agentic AI monitoring using LangChain and Anthropic APIs to enable automated system health checks, anomaly detection, and intelligent reporting."
   },
   {
     "id": "paper_adversarial_cybersecurity",
@@ -44,12 +49,18 @@
   },
   {
     "title": "Research on Low-Resource Medical NLP",
-    "description": "Natural Language Processing for medical applications in low-resource settings.",
-    "details": "This research focuses on the challenge of applying advanced Natural Language Processing (NLP) techniques to medical domains where labeled data is scarce. We explore transfer learning and data augmentation techniques to adapt large pre-trained language models (like those from the Hugging Face Transformers library) to specific medical tasks, such as clinical entity recognition and patient outcome prediction, using only a small amount of annotated data. The paper proposes a new self-training methodology that leverages a model's own predictions on unlabeled data to improve its performance, demonstrating its effectiveness on several low-resource medical datasets. The goal is to make cutting-edge NLP accessible for a wider range of medical applications, particularly in specialized or under-resourced areas.",
+    "description": "Natural Language Processing for medical applications with RAG and AI agent integration.",
+    "details": "This research focuses on the challenge of applying advanced Natural Language Processing (NLP) techniques to medical domains where labeled data is scarce. We explore transfer learning and data augmentation techniques to adapt large pre-trained language models (like those from the Hugging Face Transformers library) to specific medical tasks, such as clinical entity recognition and patient outcome prediction, using only a small amount of annotated data. The paper proposes a new self-training methodology that leverages a model's own predictions on unlabeled data to improve its performance, demonstrating its effectiveness on several low-resource medical datasets. Enhanced with Retrieval-Augmented Generation (RAG) using vector databases and embedding models for knowledge-grounded clinical decision support, and agentic AI systems for multi-step medical workflows.",
     "tech_stack": [
       "Python",
       "PyTorch",
-      "Hugging Face Transformers"
+      "Hugging Face Transformers",
+      "LangChain",
+      "LlamaIndex",
+      "Vector Databases",
+      "Embedding Models",
+      "Anthropic API",
+      "CrewAI"
     ],
     "image": "linux_20260110_075933.jpg",
     "content_file": "paper_low_resource_med.md",
@@ -85,7 +96,10 @@
       "Fairness Auditing",
       "Explainability Stability",
       "Drift Detection",
-      "Adaptive SHAP"
+      "Adaptive SHAP",
+      "LangChain",
+      "Anthropic API",
+      "MLflow"
     ],
     "details": "This research explores how AI credit-scoring models can stay fair, transparent, and reliable over time even as customer behavior, economics, or demographics change. It introduces an adaptive explanation framework that monitors how model decisions evolve, detects data or concept drift, and ensures that explanations remain stable and fair across groups like gender, income, or region. Using metrics for drift detection, fairness auditing, and explainability stability (such as cosine similarity, Kendall tau, and Jaccard overlap), the study builds a foundation for ethical and trustworthy AI in financial decision-making."
   },
@@ -111,7 +125,9 @@
     "tech_stack": [
       "Python",
       "Pandas",
-      "Scikit-Learn"
+      "Scikit-Learn",
+      "MLflow",
+      "Evaluation Frameworks"
     ],
     "image": "ml_audit_preview_20260110_094354.png",
     "content_file": "ml_audit_library.md",

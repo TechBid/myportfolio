@@ -139,7 +139,7 @@ body.signature-layout .story-hero {
 body.signature-layout .hero-title {
   grid-column: 1/-1;
   margin: 0;
-  font-size: clamp(2rem, 7vw, 5.8rem);
+  font-size: clamp(2rem, 4.8vw, 4.2rem);
   line-height: 0.92;
   letter-spacing: -0.02em;
 }

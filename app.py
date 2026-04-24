@@ -84,6 +84,10 @@ def index():
     settings = load_settings()
     return render_template('index.html', projects=projects_to_display, research_papers=research_to_display, settings=settings)
 
+@app.route('/certifications')
+def certifications():
+    return render_template('certifications.html')
+
 @app.route('/ai_chat_modal/<item_id>')
 def ai_chat_modal(item_id):
     # Find item from all_data
